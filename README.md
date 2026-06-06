@@ -4,6 +4,7 @@ A custom Homebrew tap for personal/third-party macOS applications and tools.
 
 ## Available Casks
 
+* **Alacritty** (`alacritty`): GPU-accelerated terminal emulator.
 * **Radicle** (`radicle-desktop`): Desktop client for the Radicle peer-to-peer code collaboration network.
 
 ---
@@ -18,24 +19,22 @@ Run the following commands to add the tap and authorize it on your machine:
 ```bash
 brew tap justin24506/tap
 brew trust justin24506/tap
-
 ```
 
-### Step 2: Install the Cask
+### Step 2: Install a Cask
 
 Once the tap is trusted, you can install the application natively:
 
 ```bash
-brew install --cask radicle-desktop
-
+brew install --cask <cask-name>
 ```
 
-### One-Line Alternative
+### Alternatively,
 
 If you prefer to install it immediately using a fully-qualified name without tapping first, Homebrew will prompt you for trust dynamically:
 
 ```bash
-brew install --cask justin24506/tap/radicle-desktop
+brew install --cask justin24506/tap/<cask-name>
 ```
 
 ### Via Brewfile
@@ -44,7 +43,7 @@ If you manage your software setup via a `Brewfile` using `brew bundle`, add thes
 
 ```ruby
 tap "justin24506/tap"
-cask "radicle-desktop"
+cask <cask-name>
 ```
 
 *(Note: If running automated bundles, you may need to execute `brew trust justin24506/tap` prior to running `brew bundle` to prevent the installer from skipping it).*
@@ -53,12 +52,12 @@ cask "radicle-desktop"
 
 ## Trusting Unnotarized Apps (Gatekeeper Bypass)
 
-Radicle Desktop is distributed directly by its developers and does not go through Apple's official App Store notarization.
+Some apps do not go through Apple's official App Store notarization.
 
-My cask configuration automatically strips the macOS quarantine flag during installation. However, if macOS Gatekeeper still blocks the app from launching with an "unverified developer" warning, you can easily bypass it:
+My cask configuration automatically strips the macOS quarantine flag for such unnotarized apps during installation. However, if macOS Gatekeeper still blocks the app from launching with an "unverified developer" warning, you can easily bypass it:
 
 1. Open your `/Applications` folder in Finder.
-2. **Right-click** (or `Control` + click) the Radicle application icon.
+2. **Right-click** (or `Control` + click) the application icon.
 3. Select **Open** from the context menu.
 4. Click **Open** again on the security confirmation dialog. (You will only need to do this once).
 
@@ -66,7 +65,7 @@ OR
 
 You can run 
 ```zsh
-sudo xattr -rd com.apple.quarantine /Applications/Radicle.app
+xattr -rd com.apple.quarantine /Applications/<AppName>.app
 ```
 in the terminal.
 
