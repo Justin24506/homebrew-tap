@@ -1,4 +1,4 @@
-# Justin24506 Tap
+# My Homebrew Tap
 
 A custom Homebrew tap for personal/third-party macOS applications and tools.
 
