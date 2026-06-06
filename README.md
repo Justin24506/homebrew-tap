@@ -43,7 +43,7 @@ If you manage your software setup via a `Brewfile` using `brew bundle`, add thes
 
 ```ruby
 tap "justin24506/tap"
-cask <cask-name>
+cask "<cask-name>"
 ```
 
 *(Note: If running automated bundles, you may need to execute `brew trust justin24506/tap` prior to running `brew bundle` to prevent the installer from skipping it).*
@@ -63,11 +63,11 @@ My cask configuration automatically strips the macOS quarantine flag for such un
 
 OR
 
-You can run 
+You can clear the quarantine attribute via the terminal:
+
 ```zsh
 xattr -rd com.apple.quarantine /Applications/<AppName>.app
 ```
-in the terminal.
 
 ---
 
