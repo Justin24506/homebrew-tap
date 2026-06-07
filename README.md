@@ -4,8 +4,9 @@ A custom Homebrew tap for personal/third-party macOS applications and tools.
 
 ## Available Casks
 
-* **Alacritty** (`alacritty`): GPU-accelerated terminal emulator.
-* **Radicle** (`radicle-desktop`): Desktop client for the Radicle peer-to-peer code collaboration network.
+* [**Alacritty**](https://github.com/alacritty/alacritty/) (`alacritty`): GPU-accelerated terminal emulator.
+* [**Radicle**](https://radicle.dev/) (`radicle-desktop`): Desktop client for the Radicle peer-to-peer code collaboration network.
+* [**MarkText**](https://github.com/marktext/marktext) (`mark-text`): Markdown Editor
 
 ---
 
